@@ -1,0 +1,37 @@
+extensions:
+  health_check:
+    endpoint: "0.0.0.0:13133"   # liveness
+    # optional: timeout, interval, etc.
+
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+exporters:
+  debug:
+    verbosity: detailed
+
+  otlp:
+    endpoint: monitorjaeger:4317
+    tls:
+      insecure: false
+
+processors:
+  batch: {}
+
+service:
+  extensions: [health_check]
+  pipelines:
+    traces:
+      receivers: [otlp]
+      exporters: [otlp]
+    metrics:
+      receivers: [otlp]
+      exporters: [otlp]
+    logs:
+      receivers: [otlp]
+      exporters: [otlp]

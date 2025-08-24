@@ -1,0 +1,41 @@
+{
+	"cpu": 1,
+	"environments": {
+		"infra": {
+			"deploy": false
+		}
+	},
+	"id": "__PROJECT_ID__",
+	"kind": "Deployment",
+	"livenessProbe": {
+		"httpGet": {
+			"path": "/",
+			"port": 13133
+		}
+	},
+	"loadBalancer": {
+		"targetPort": 13133
+	},
+	"ports": [
+		{
+			"port": 4318,
+			"targetPort": 4318,
+			"protocol": "TCP",
+			"external": true
+		},
+		{
+			"port": 4317,
+			"targetPort": 4317,
+			"protocol": "TCP",
+			"external": true
+		}
+	],
+	"memory": 1024,
+	"readinessProbe": {
+		"httpGet": {
+			"path": "/",
+			"port": 13133
+		}
+	},
+	"scale": 1
+}
