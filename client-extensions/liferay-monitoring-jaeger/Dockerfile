@@ -4,8 +4,7 @@ FROM jaegertracing/all-in-one:1.48
 ENV COLLECTOR_OTLP_ENABLED=true \
     COLLECTOR_OTLP_GRPC_HOST_PORT=:4317 \
     COLLECTOR_OTLP_HTTP_HOST_PORT=:4318 \
-    SPAN_STORAGE_TYPE=memory \
-    QUERY_BASE_PATH=/monitor-jaeger
+    SPAN_STORAGE_TYPE=memory
 
 # Expose ports
 

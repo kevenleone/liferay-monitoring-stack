@@ -1,0 +1,67 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1,
+    "links": [],
+    "panels": [
+        {
+            "datasource": "Jaeger",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 2,
+            "options": {
+                "content": "# Liferay Monitoring Dashboard\n\nThis is a sample dashboard for monitoring Liferay using OpenTelemetry and Jaeger.\n\n## Getting Started\n\n1. Configure your Liferay instance to send traces to the OpenTelemetry Collector\n2. View traces in Jaeger\n3. Create custom dashboards in Grafana\n",
+                "mode": "markdown"
+            },
+            "pluginVersion": "7.1.0",
+            "targets": [
+                {
+                    "refId": "A"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Liferay Monitoring Overview",
+            "type": "text"
+        }
+    ],
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Liferay Overview",
+    "uid": "liferay-overview",
+    "version": 1
+}
